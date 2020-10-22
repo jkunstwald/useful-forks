@@ -4,7 +4,7 @@ const svg_literal_star = '<svg aria-label="star" height="16" class="octicon octi
 
 const svg_literal_eye = '<svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>';
 
-const additional_css_literal = '#useful_forks_wrapper .repo div {display: inline-block;color: #666;margin: 2px 15px;} #useful_forks_wrapper .repo {text-align: center;}';
+const additional_css_literal = '#useful_forks_wrapper .repo div {display: inline-block;color: #666;margin: 2px 15px; text-align:left;min-width:300px;} #useful_forks_wrapper .repo {/*text-align: center;*/}';
 
 function build_fork_element_html(combined_name, num_stars, num_watches, num_forks)
 {
@@ -16,7 +16,7 @@ function add_fork_elements(forkdata_array)
     if (!forkdata_array || forkdata_array.length == 0)
         return;
 
-    let wrapper_html = '<h5>Starred Forks</h5>';
+    let wrapper_html = '<h4>Starred Forks</h4>';
     for (let i = 0; i < Math.min(15, forkdata_array.length); ++i)
     {
         const elem_ref = forkdata_array[i];
